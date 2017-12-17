@@ -8,18 +8,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import ca.paruvendu.resource.BookResource;
+import ca.paruvendu.domain.Product;
+import ca.paruvendu.service.impl.ProductService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ParuvenduAngularApplicationTests {
-
+public class ProductServiceTest {
 	@Autowired
-	private BookResource controller;
+	private ProductService productService;
 	
-    @Test
-    public void contexLoads() throws Exception {
-        assertThat(controller).isNotNull();
-    }
+	
+	@Test
+	public void testGetProductTest(){
+		Product product= productService.getProductById("4028b8815b738246015b738328d50000");
+		assertThat(product.getProductCondition()).isEqualTo("new");
+		
+	}
 
 }

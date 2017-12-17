@@ -15,7 +15,7 @@ import ca.paruvendu.repository.RoleRepository;
 import ca.paruvendu.repository.UserRepository;
 import ca.paruvendu.service.UserService;
 
-@Component
+@Component(value="UserServiceImpl")
 public class UserServiceImpl implements UserService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
@@ -46,5 +46,27 @@ public class UserServiceImpl implements UserService {
         
         return localUser;
 	}
+
+	@Override
+	public User findByUserName(String username) {
+		return userRepository.findByUsername(username);
+	}
+
+	@Override
+	public User findByEmail(String email) {
+		return userRepository.findByEmail(email);
+	}
+
+	@Override
+	public User save(User user) {
+		return userRepository.save(user);
+	}
+
+	@Override
+	public User findOne(Long id) {
+		return userRepository.findOne(id);
+	}
+	
+	
 
 }

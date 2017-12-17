@@ -11,5 +11,8 @@ import ca.paruvendu.domain.security.UserRole;
 public interface UserService {
 	
 	public User createUser(User user , Set<UserRole> userRole);
-
+    public User findByUserName(String userName);
+    public  User findByEmail(String email);
+    public User save (User user);
+    public User findOne(Long id);
 }

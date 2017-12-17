@@ -25,7 +25,7 @@ public class LoginResouce {
 	@RequestMapping("/token")
 	public Map<String, String> token(HttpSession session, HttpServletRequest request) {
 
-		System.out.println(request.getRemoteHost());
+		System.out.println("Receive from--->  "+ request.getRemoteHost());
 
 		String remoteHost = request.getRemoteHost();
 		int portNumber = request.getRemotePort();

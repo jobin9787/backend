@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,6 +25,7 @@ import ca.paruvendu.domain.security.UserRole;
 
 
 @Entity
+@Table(name = "user")
 public class User implements UserDetails, Serializable{
 	
 	private static final long serialVersionUID=4444L;

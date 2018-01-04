@@ -29,7 +29,7 @@ private CaradRepository caradRepository;
 	@Override
 	public Carad findById(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return caradRepository.findOne(id);
 	}
 
 }

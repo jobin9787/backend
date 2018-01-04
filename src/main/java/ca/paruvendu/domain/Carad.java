@@ -1,4 +1,6 @@
 package ca.paruvendu.domain;
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,10 +14,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 //@Table(name = "carad", catalog ="mydatabase")
-public class Carad {
+public class Carad implements Serializable{
 
 	   
-	    @Id
+	    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+		@Id
 	    @GeneratedValue(generator = "uuid")
 	    @GenericGenerator(name = "uuid", strategy="uuid")
 		private String id;

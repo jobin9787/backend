@@ -8,6 +8,9 @@ target/
 .project
 .settings
 .springBeans
+.static
+*.png
+*.JPG
 
 ### IntelliJ IDEA ###
 .idea

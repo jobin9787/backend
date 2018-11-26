@@ -55,7 +55,7 @@ public class Carad implements Serializable{
 		private String doorNo;
 
 		
-
+		transient private int fileNumber;
 		
 		
 //		@Column (name="ID")
@@ -238,6 +238,12 @@ public class Carad implements Serializable{
 		}
 		public void setDoorNo(String doorNo) {
 			this.doorNo = doorNo;
+		}
+		public int getFileNumber() {
+			return fileNumber;
+		}
+		public void setFileNumber(int fileNumber) {
+			this.fileNumber = fileNumber;
 		}
 		
 		

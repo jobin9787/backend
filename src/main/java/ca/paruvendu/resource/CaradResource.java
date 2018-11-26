@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
@@ -127,7 +128,13 @@ public class CaradResource {
 	  public Carad getCaradById(@PathVariable("id")  String id){
 		  ObjectMapper mapper = new ObjectMapper();
 			//Convert object to JSON string
-		 Carad carad= caradService.findById(id);
+		  Carad carad= caradService.findById(id);
+		  String directory = "src/main/resources/static/image/carad/"+id;
+		   File file = new File(directory);
+		   String[] files = file.list();
+		   int numFiles = files.length;
+		   logger.info("numFiles---> "+ numFiles);
+		   carad.setFileNumber(numFiles);
 			String jsonInString;
 			try {
 				jsonInString = mapper.writeValueAsString(carad);

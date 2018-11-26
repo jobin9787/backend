@@ -16,14 +16,14 @@ import ca.paruvendu.domain.User;
 import ca.paruvendu.service.UserService;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+//@SpringBootTest
 public class PasswordEncriptingTest {
 	SecurityConfig securityConfig = new SecurityConfig();
 	BCryptPasswordEncoder passwordEncoder = SecurityUtility.passwordEncoder();
 	@Autowired
 	@Qualifier("UserServiceImpl")
 	private UserService repository;
-	@Test
+//	@Test
 	public void passwordTest(){
 	User user = repository.findByUserName("j");
 	String dbPassword = user.getPassword();

@@ -47,7 +47,7 @@ public class ParuvenduRepositoryTests {
 	}
 	
 	
-	@Test
+//	@Test
 	public void testExample(){
 	    User user1 = this.repository.findByEmail("abdelhamidmtl@gmail.com");
         assertThat(user1.getUsername()).isEqualTo("t");
